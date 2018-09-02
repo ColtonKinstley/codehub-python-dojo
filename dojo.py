@@ -8,11 +8,11 @@ class Board:
         self.board = np.zeros(shape=(10, 10))
 
         self.ships = {
-            "carrier": ( np.ones(5), 1),
-            "battleship": ( np.ones(4), 2),
-            "cruser": ( np.ones(3), 3),
-            "submarine": ( np.ones(3), 4),
-            "destroyer": ( np.ones(2), 5),
+            "carrier": (np.ones(5), 1),
+            "battleship": (np.ones(4), 2),
+            "cruser": (np.ones(3), 3),
+            "submarine": (np.ones(3), 4),
+            "destroyer": (np.ones(2), 5),
         }
 
         self.letters = {
@@ -56,8 +56,8 @@ class Board:
                 "constant",
             )
 
-            if ( self.board.clip(0,1)[num-1, :] + ship ).max() == 1:
-                self.board[num - 1, :] = self.board[num - 1, :] + (ship_number*ship)
+            if (self.board.clip(0, 1)[num - 1, :] + ship).max() == 1:
+                self.board[num - 1, :] = self.board[num - 1, :] + (ship_number * ship)
             else:
                 raise ValueError(
                     "You are trying to place a ship on top of another ship."
@@ -70,8 +70,8 @@ class Board:
                 "constant",
             )
 
-            if ( self.board.clip(0,1)[:, lett-1] + ship ).max() == 1:
-                self.board[:, lett - 1] = self.board[:, lett - 1] + (ship_number*ship)
+            if (self.board.clip(0, 1)[:, lett - 1] + ship).max() == 1:
+                self.board[:, lett - 1] = self.board[:, lett - 1] + (ship_number * ship)
             else:
                 raise ValueError(
                     "You are trying to place a ship on top of another ship."
