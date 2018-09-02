@@ -89,9 +89,3 @@ class Board:
     def show_board(self):
         print(self.board)
 
-
-class Game(Board):
-    def __init__(self, name1, name2):
-        self.player1 = {name: name1, points: 0}
-
-    # def win(self,player):
