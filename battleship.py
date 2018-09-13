@@ -88,4 +88,3 @@ class Board:
 
     def show_board(self):
         print(self.board)
-
